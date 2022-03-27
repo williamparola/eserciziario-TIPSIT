@@ -1,0 +1,71 @@
+<!--Collocare casualmente in modalità temporizzata due DIV della stessa dimensione, una blu e una gialla;
+quando queste si trovano sovrapposte colorarle entrambe di rosso.--> 
+
+<SCRIPT Language='JavaScript'>
+function muovi() {
+   setInterval(function(){
+  var a=document.getElementById('A');
+  var b=document.getElementById('B');
+      x=Math.random()*500+10;
+      y=Math.random()*500+10;
+      a.style.left=x;
+      a.style.top=y;
+
+      x=Math.random()*500+10;
+      y=Math.random()*500+10;
+      b.style.left=x;
+      b.style.top=y;
+   }, 500);
+}
+</SCRIPT>
+
+<HTML>
+   <HEAD>
+   <TITLE>test4</TITLE>
+   </HEAD>
+
+   <style type="text/css">
+     
+      #A
+      {
+         left:50px;
+         top:50px;
+         height:50px;
+         background-color:blue;
+         color:black;
+         position:absolute;
+         height:100px;
+         width:100px;
+         text-align:center;
+         font-size:20px; 
+         border-width:1px;
+         border:solid black;
+      }
+
+      #B
+      {
+         left:50px;
+         top:50px;
+         height:50px;
+         background-color:yellow;
+         color:black;
+         position:absolute;
+         height:100px;
+         width:100px;
+         text-align:center;
+         font-size:20px; 
+         border-width:1px;
+         border:solid black;
+      }
+
+   </style>
+
+
+    <BODY onload="muovi()">
+
+    <DIV id='A'></DIV>
+      <DIV id='B'></DIV>
+	
+   </body>
+
+</html>

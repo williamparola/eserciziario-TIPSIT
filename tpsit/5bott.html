@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JavaScript </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="../../JS/script2.js"></script>
+        <link rel="stylesheet" href="../../css/articolojava2.css">
+    </head>
+    <body>
+    
+        <!--BARRA DI SOPRA-->
+        <div class="casellaTesto">
+            <h1>JavaScript 2!</h1>
+            <p>Usciranno delle tabelle della verità quando cliccherai i pulsanti</p> 
+          
+            <img src="and.jpg" class="immagine2" onclick="immagine1()">
+            <img src="or.jpg" class="immagine2" onclick="immagine2()">
+            <img src="not.jpg" class="immagine2" onclick="immagine3()">
+            <img src="nand.jpg" class="immagine2" onclick="immagine4()">
+            <img src="nor.jpg" class="immagine2" onclick="immagine5()">
+            <img src="../../Immagini/loading.gif" id="immagine7">
+          
+        </div>
+      <script>
+        function immagine1() {
+    document.getElementById("immagine7").src=  "./and.jpg";
+}
+        
+function immagine2() {
+    document.getElementById("immagine7").src=  "./or.jpg";
+}
+        
+function immagine3() {
+    document.getElementById("immagine7").src=  "./not.jpg";
+}
+        
+function immagine4() {
+    document.getElementById("immagine7").src=  "./nand.jpg";
+}
+        
+function immagine5() {
+    document.getElementById("immagine7").src=  "./nor.jpg";
+}
+        
+      </script>
+        <!--Barra sotto-->
+        <div id="barraSotto">
+        </div>
+    </body>
+</html2
