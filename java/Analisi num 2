@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onLoad="principale()">
+  <script src="script.js"></script>
+
+  
+
+  <script>
+    
+    let NV = 0;
+    let i, j;
+    let Vettore = [];
+
+
+    function TrovaPrimi(N) {
+      let primo = false;
+      for ( i = 2; i < N / 2 + 1 && !primo; i++) {
+        if (N % i == 0) {
+          primo = true;
+        }
+      }
+      
+      if (!primo) {
+        Vettore[NV] = N;
+        NV++;
+      }
+    }
+    
+    function principale() {
+      for (j = 2; j < 100000; j++) {
+        TrovaPrimi(j);
+      }
+
+      for (j = 0; j < NV; j++) {
+        document.getElementById("output1").innerHTML += Vettore[j] + " ";
+      }
+      NV = 0;
+    }
+    
+  </script>
+
+  <p id = "output1"></p>
+</body>
+
+</html>
