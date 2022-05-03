@@ -1,73 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    
-    <title>Document</title>
+<html>
 
-    <script>
-      /*  1) quale numero <1000 ha più fattori ?
-            2) quanti fattori totali hanno i numeri compresi tra 1 e 1000 (somma di tutti i fattori esclusi i fattori dei numeri primi)
-            3) qual è il numero che si trova moltiplicando il numero della domanda 1 e i numero che ha + fattori possibili tra i numeri 1000 e 2000*/
-      function Fattori(){
-        let contMax = -1;
-        let cont;
-        let numFatt;
-        for (let Var = 2; Var < 1000; Var++) {
-          cont = fattorizzatore(Var);
-          if (contMax < cont) {
-            contMax = cont;
-            numFatt = Var;
-          }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onLoad="inizio()">
+  <script src="script.js"></script>
+
+  <script>
+    
+    let NV=0;
+    let i, j;
+    let Vettore=[];
+
+
+    function TrovaPrimi(N) {    //esempio prof
+      let primo=false;
+      for ( i=2; i<N/2 +1 && !primo; i++ ) {
+        if (N%i==0) {
+          primo=true;
         }
-        return numFatt;
       }
-
-      function Fattori2(){
-        let contMax = -1;
-        let cont;
-        let numFatt;
-        for (let Var = 1000; Var < 2000; Var++) {
-          cont = fattorizzatore(Var);
-          if (contMax < cont) {
-            contMax = cont;
-            numFatt = Var;
-          }
-        }
-        return numFatt;
+      
+      if (!primo) {
+        Vettore[NV]=N;
+        NV++;
       }
-
-      function molti(){
-        let n1 = Fattori();
-        let n2 = Fattori2();
-        let moltiplicazione = n1 * n2;
-        document.getElementById("output3").innerText = moltiplicazione;
-        document.getElementById("output1").innerHTML = n1;
-        document.getElementById("output2").innerHTML = n2;
-      }
-
-      function fattorizzatore(n){
-        let cont = 0;
-        let Stop = n / 2;
-        for (let fat = 1; fat <= Stop; fat++) {
-          if (n % fat == 0) {
-            cont++;
-          }
-        }
-        return cont;
-      }
-    </script>
-  </head>
-
-  <body style="background-color: #f9fbf2" onload="molti()">
+    }
     
-    <div class="container-fluid">
-      <p id="output1"></p>
-      <p id="output2"></p>
-      <p id="output3"></p>
+    function inizio() {
+      for (j=2; j<10000; j++) { // 10 mln funziona ugualmente ma richiede 20+ minuti
+        TrovaPrimi(j);
+      }
+
+      for (j=0; j<NV; j++) {
+        document.getElementById("output").innerHTML += Vettore[j] + " ";
+      }
+      NV=0;
+    }
     
-  </body>
+  </script>
+
+  <p id="output"></p>
+  
+</body>
+
 </html>
